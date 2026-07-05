@@ -39,7 +39,7 @@ export default function Home() {
               animation: "fadeUp 1s ease 0.2s forwards",
             }}
           >
-            {person.location} &nbsp;/&nbsp; {person.status}
+            {person.status} &nbsp;/&nbsp; {person.location}
           </span>
 
           <h1

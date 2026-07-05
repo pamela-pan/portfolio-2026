@@ -6,8 +6,8 @@ export const person = {
   name: "Pamela",
   nameFull: "Pamela Pan",
   nameChinese: "潘平悦",
+  status: "Open to oppty",
   location: "SF - NY - LA",
-  status: "Currently open",
   bio: "AI-native builder & storyteller",
   email: "pamela.pan0224@gmail.com",         // update
   linkedin: "https://linkedin.com/in/pampan", // update
