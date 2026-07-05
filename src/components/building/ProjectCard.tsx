@@ -16,7 +16,7 @@ export default function ProjectCard({ project, index = 1, total = 1 }: ProjectCa
 
   return (
     <Link
-      href={`/work/${project.slug}`}
+      href={`/building/${project.slug}`}
       style={{ textDecoration: "none", color: "inherit" }}
     >
       <div

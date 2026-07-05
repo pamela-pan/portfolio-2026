@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import { person } from "@/lib/content";
 
 const links = [
-  { href: "/work", label: "Work" },
-  { href: "/writing", label: "Writing" },
+  { href: "/building", label: "Building" },
+  { href: "/storytelling", label: "Storytelling" },
   { href: "/about", label: "About" },
 ];
 

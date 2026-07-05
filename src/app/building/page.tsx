@@ -1,10 +1,10 @@
 import Nav from "@/components/nav/Nav";
-import ProjectCard from "@/components/work/ProjectCard";
+import ProjectCard from "@/components/building/ProjectCard";
 import { projects } from "@/lib/content";
 
-export const metadata = { title: "Work — Pamela Pan" };
+export const metadata = { title: "Building — Pamela Pan" };
 
-export default function WorkPage() {
+export default function BuildingPage() {
   return (
     <main style={{ minHeight: "100vh", background: "var(--bg)" }}>
       <Nav />

@@ -1,7 +1,7 @@
 import Nav from "@/components/nav/Nav";
-import ProjectCard from "@/components/work/ProjectCard";
+import ProjectCard from "@/components/building/ProjectCard";
 import Botanical from "@/components/shared/Botanical";
-import { person, territories, featuredProject, projects } from "@/lib/content";
+import { person, territories, featuredProjects } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -36,7 +36,7 @@ export default function Home() {
           style={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "flex-end",
+            justifyContent: "center",
             padding: "0 52px 72px",
             zIndex: 2,
           }}
@@ -68,7 +68,7 @@ export default function Home() {
               animation: "fadeUp 1s ease 0.4s forwards",
             }}
           >
-            {person.name}
+            {person.nameFull}
           </h1>
 
           <p
@@ -89,25 +89,15 @@ export default function Home() {
           <p
             style={{
               fontFamily: "var(--serif)",
-              fontSize: "clamp(15px, 1.35vw, 17px)",
-              lineHeight: 1.8,
+              fontSize: "clamp(19px, 2.2vw, 26px)",
+              lineHeight: 1.6,
               maxWidth: "36ch",
               marginBottom: 52,
               opacity: 0,
               animation: "fadeUp 1s ease 0.7s forwards",
             }}
           >
-            {person.bio
-              .split(/(technical storytelling|interactive systems|human adoption)/)
-              .map((part, i) =>
-                ["technical storytelling", "interactive systems", "human adoption"].includes(part) ? (
-                  <em key={i} style={{ fontStyle: "italic", color: "var(--ink-muted)" }}>
-                    {part}
-                  </em>
-                ) : (
-                  part
-                )
-              )}
+            {person.bio}
           </p>
 
           <div
@@ -119,7 +109,7 @@ export default function Home() {
               animation: "fadeUp 1s ease 0.9s forwards",
             }}
           >
-            <a href="/work" style={pillStyle}>
+            <a href="/building" style={pillStyle}>
               View work
             </a>
             <a href={`mailto:${person.email}`} style={textLinkStyle}>
@@ -128,7 +118,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Right — featured project */}
+        {/* Right — featured projects */}
         <div
           style={{
             position: "relative",
@@ -154,18 +144,27 @@ export default function Home() {
           </div>
 
           <div
+            className="hide-scrollbar"
             style={{
               opacity: 0,
               animation: "fadeUp 1.2s ease 1s forwards",
               width: "100%",
               maxWidth: 420,
+              maxHeight: "100%",
+              overflowY: "auto",
+              display: "flex",
+              flexDirection: "column",
+              gap: 56,
             }}
           >
-            <ProjectCard
-              project={featuredProject}
-              index={1}
-              total={projects.length}
-            />
+            {featuredProjects.map((project, i) => (
+              <ProjectCard
+                key={project.slug}
+                project={project}
+                index={i + 1}
+                total={featuredProjects.length}
+              />
+            ))}
           </div>
         </div>
 

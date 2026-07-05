@@ -3,11 +3,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Pamela Pan — AI-native builder",
-  description:
-    "AI-native builder from Los Angeles. Working at the intersection of technical storytelling, interactive systems, and human adoption.",
+  description: "AI-native builder & storyteller.",
   openGraph: {
     title: "Pamela Pan — 潘平悦",
-    description: "AI-native builder. Technical storytelling · Interactive systems · Human adoption.",
+    description: "Technical storytelling · Human-centered systems · From capability to adoption.",
     url: "https://pamelapan.co",
   },
   twitter: {
