@@ -14,19 +14,7 @@ export default function Nav() {
   const pathname = usePathname();
 
   return (
-    <nav
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 100,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: "28px 52px",
-      }}
-    >
+    <nav className="site-nav">
       <Link
         href="/"
         style={{
@@ -41,7 +29,7 @@ export default function Nav() {
         {person.nameFull} &nbsp;·&nbsp; {person.nameChinese}
       </Link>
 
-      <ul style={{ display: "flex", gap: "36px", listStyle: "none", margin: 0, padding: 0 }}>
+      <ul className="nav-links">
         {links.map(({ href, label }) => {
           const active = pathname.startsWith(href);
           return (

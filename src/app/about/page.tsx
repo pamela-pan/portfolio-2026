@@ -9,15 +9,7 @@ export default function AboutPage() {
     <main style={{ minHeight: "100vh", background: "var(--bg)" }}>
       <Nav />
 
-      <div
-        style={{
-          padding: "140px 52px 120px",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "0 80px",
-          maxWidth: 1100,
-        }}
-      >
+      <div className="about-grid">
         {/* Left — text */}
         <div>
           <span
@@ -59,12 +51,12 @@ export default function AboutPage() {
           ].map((para, i) => (
             <p
               key={i}
+              className="about-bio"
               style={{
                 fontFamily: "var(--serif)",
                 fontSize: 17,
                 lineHeight: 1.85,
                 marginBottom: 28,
-                maxWidth: "48ch",
                 color: i === 0 ? "var(--ink)" : "var(--ink-muted)",
               }}
             >
@@ -143,6 +135,7 @@ export default function AboutPage() {
 
         {/* Right — portrait */}
         <div
+          className="about-portrait"
           style={{
             display: "flex",
             alignItems: "center",
@@ -151,9 +144,8 @@ export default function AboutPage() {
           }}
         >
           <div
+            className="about-photo-wrap"
             style={{
-              width: 320,
-              height: 320,
               borderRadius: "50%",
               overflow: "hidden",
               border: "0.5px solid var(--border)",

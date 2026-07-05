@@ -9,16 +9,10 @@ export default function Home() {
       <Nav />
 
       {/* ── Hero ─────────────────────────────────── */}
-      <section
-        style={{
-          minHeight: "100vh",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          position: "relative",
-        }}
-      >
+      <section className="hero-section">
         {/* Vertical divider */}
         <div
+          className="hero-divider"
           style={{
             position: "absolute",
             top: 0,
@@ -32,15 +26,7 @@ export default function Home() {
         />
 
         {/* Left — identity */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            padding: "0 52px 72px",
-            zIndex: 2,
-          }}
-        >
+        <div className="hero-left">
           <span
             style={{
               fontFamily: "var(--mono)",
@@ -57,9 +43,9 @@ export default function Home() {
           </span>
 
           <h1
+            className="hero-name"
             style={{
               fontFamily: "var(--serif)",
-              fontSize: "clamp(52px, 6.5vw, 82px)",
               fontWeight: 400,
               lineHeight: 1.0,
               letterSpacing: "-0.02em",
@@ -87,11 +73,11 @@ export default function Home() {
           </p>
 
           <p
+            className="hero-bio"
             style={{
               fontFamily: "var(--serif)",
               fontSize: "clamp(19px, 2.2vw, 26px)",
               lineHeight: 1.6,
-              maxWidth: "36ch",
               marginBottom: 52,
               opacity: 0,
               animation: "fadeUp 1s ease 0.7s forwards",
@@ -119,25 +105,13 @@ export default function Home() {
         </div>
 
         {/* Right — featured projects */}
-        <div
-          style={{
-            position: "relative",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "100px 48px 72px",
-            overflow: "hidden",
-          }}
-        >
+        <div className="hero-right">
           {/* Corner botanical */}
           <div
+            className="corner-botanical"
             style={{
-              position: "absolute",
-              top: 52,
-              right: 36,
               opacity: 0,
               animation: "fadeIn 2s ease 1.4s forwards",
-              pointerEvents: "none",
             }}
           >
             <Botanical size={90} opacity={0.5} />
@@ -170,13 +144,8 @@ export default function Home() {
 
         {/* Scroll hint */}
         <div
+          className="scroll-hint"
           style={{
-            position: "absolute",
-            bottom: 36,
-            left: 52,
-            display: "flex",
-            alignItems: "center",
-            gap: 10,
             opacity: 0,
             animation: "fadeUp 1s ease 1.3s forwards",
           }}
@@ -217,21 +186,12 @@ export default function Home() {
       </section>
 
       {/* ── Territory teasers ────────────────────── */}
-      <div
-        style={{
-          borderTop: "0.5px solid var(--border)",
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          padding: "0 52px",
-        }}
-      >
+      <div className="territory-grid">
         {territories.map((t, i) => (
           <div
             key={t.num}
+            className="territory-item"
             style={{
-              padding: "36px 40px 36px 0",
-              borderRight: i < territories.length - 1 ? "0.5px solid var(--border)" : "none",
-              paddingLeft: i > 0 ? 40 : 0,
               opacity: 0,
               animation: `fadeUp 0.8s ease ${1.3 + i * 0.1}s forwards`,
             }}

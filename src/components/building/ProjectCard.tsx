@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Project } from "@/lib/content";
 
 interface ProjectCardProps {
@@ -13,6 +13,14 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project, index = 1, total = 1 }: ProjectCardProps) {
   const [hovered, setHovered] = useState(false);
+  const [isTouch, setIsTouch] = useState(false);
+
+  useEffect(() => {
+    setIsTouch(window.matchMedia("(hover: none)").matches);
+  }, []);
+
+  // Touch devices have no hover state, so the reveal shows by default.
+  const revealed = hovered || isTouch;
 
   return (
     <Link
@@ -44,18 +52,20 @@ export default function ProjectCard({ project, index = 1, total = 1 }: ProjectCa
           >
             Featured &nbsp;— &nbsp;{String(index).padStart(2, "0")} / {String(total).padStart(2, "0")}
           </span>
-          <span
-            style={{
-              fontFamily: "var(--mono)",
-              fontSize: 10,
-              letterSpacing: "0.1em",
-              color: hovered ? "transparent" : "var(--border)",
-              textTransform: "uppercase",
-              transition: "color 0.4s ease",
-            }}
-          >
-            Hover to reveal
-          </span>
+          {!isTouch && (
+            <span
+              style={{
+                fontFamily: "var(--mono)",
+                fontSize: 10,
+                letterSpacing: "0.1em",
+                color: hovered ? "transparent" : "var(--border)",
+                textTransform: "uppercase",
+                transition: "color 0.4s ease",
+              }}
+            >
+              Hover to reveal
+            </span>
+          )}
         </div>
 
         {/* Image wrap — the blend zone */}
@@ -64,9 +74,9 @@ export default function ProjectCard({ project, index = 1, total = 1 }: ProjectCa
             position: "relative",
             borderRadius: 2,
             overflow: "hidden",
-            transform: hovered ? "rotate(0deg) scale(1)" : "rotate(-1deg) scale(0.97)",
+            transform: revealed ? "rotate(0deg) scale(1)" : "rotate(-1deg) scale(0.97)",
             transition: `transform var(--duration-reveal) var(--ease-ink), box-shadow var(--duration-reveal) ease`,
-            boxShadow: hovered
+            boxShadow: revealed
               ? "0 20px 60px rgba(28,26,23,0.15)"
               : "0 2px 8px rgba(28,26,23,0.06)",
           }}
@@ -80,10 +90,10 @@ export default function ProjectCard({ project, index = 1, total = 1 }: ProjectCa
               width: "100%",
               height: "auto",
               display: "block",
-              filter: hovered
+              filter: revealed
                 ? "saturate(1) sepia(0) brightness(1)"
                 : "saturate(0.08) sepia(0.5) brightness(1.08)",
-              mixBlendMode: hovered ? "normal" : "multiply",
+              mixBlendMode: revealed ? "normal" : "multiply",
               transition: `filter var(--duration-reveal) var(--ease-ink)`,
             }}
           />
@@ -94,7 +104,7 @@ export default function ProjectCard({ project, index = 1, total = 1 }: ProjectCa
               position: "absolute",
               inset: 0,
               background: "var(--bg)",
-              opacity: hovered ? 0 : 0.6,
+              opacity: revealed ? 0 : 0.6,
               transition: `opacity var(--duration-reveal) var(--ease-ink)`,
               zIndex: 1,
               pointerEvents: "none",
@@ -108,7 +118,7 @@ export default function ProjectCard({ project, index = 1, total = 1 }: ProjectCa
               inset: 0,
               background:
                 "linear-gradient(to top, var(--bg) 0%, rgba(247,243,238,0.55) 28%, rgba(247,243,238,0) 52%)",
-              opacity: hovered ? 0 : 1,
+              opacity: revealed ? 0 : 1,
               transition: `opacity var(--duration-reveal) var(--ease-ink)`,
               zIndex: 2,
               pointerEvents: "none",
@@ -123,8 +133,8 @@ export default function ProjectCard({ project, index = 1, total = 1 }: ProjectCa
             display: "flex",
             alignItems: "baseline",
             justifyContent: "space-between",
-            opacity: hovered ? 1 : 0,
-            transform: hovered ? "translateY(0)" : "translateY(8px)",
+            opacity: revealed ? 1 : 0,
+            transform: revealed ? "translateY(0)" : "translateY(8px)",
             transition: "opacity 0.5s ease 0.4s, transform 0.5s ease 0.4s",
           }}
         >

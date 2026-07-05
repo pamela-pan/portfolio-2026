@@ -85,3 +85,114 @@ h1, h2, h3, h4 {
     transform: none !important;
   }
 }
+
+/* ─── Site chrome + homepage layout ──────────────── */
+.site-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 52px;
+}
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-section {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+}
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 52px 72px;
+  z-index: 2;
+}
+.hero-name { font-size: clamp(52px, 6.5vw, 82px); }
+.hero-bio { max-width: 36ch; }
+.hero-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 48px 72px;
+  overflow: hidden;
+}
+.corner-botanical {
+  position: absolute;
+  top: 52px;
+  right: 36px;
+  pointer-events: none;
+}
+.scroll-hint {
+  position: absolute;
+  bottom: 36px;
+  left: 52px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.territory-grid {
+  border-top: 0.5px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 52px;
+}
+.territory-item {
+  border-right: 0.5px solid var(--border);
+  padding: 36px 40px 36px 40px;
+}
+.territory-item:first-child { padding-left: 0; }
+.territory-item:last-child { border-right: none; }
+
+.about-grid {
+  padding: 140px 52px 120px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 80px;
+  max-width: 1100px;
+}
+.about-bio { max-width: 48ch; }
+.about-photo-wrap { width: 320px; height: 320px; }
+
+@media (max-width: 768px) {
+  .site-nav { padding: 18px 20px; flex-wrap: wrap; row-gap: 10px; }
+  .nav-links { gap: 16px; }
+
+  .hero-section { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 128px 24px 40px; }
+  .hero-name { font-size: clamp(40px, 13vw, 56px); }
+  .hero-bio { max-width: none; }
+  .hero-right { padding: 8px 24px 56px; }
+  .corner-botanical { display: none; }
+  .scroll-hint { left: 24px; bottom: 24px; }
+  .hero-divider { display: none; }
+
+  .territory-grid { grid-template-columns: 1fr; padding: 0 24px; }
+  .territory-item {
+    border-right: none;
+    border-bottom: 0.5px solid var(--border);
+    padding: 28px 0;
+  }
+  .territory-item:first-child { padding-left: 0; }
+  .territory-item:last-child { border-bottom: none; }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px 0;
+    padding: 128px 24px 80px;
+  }
+  .about-portrait { order: -1; }
+  .about-bio { max-width: none; }
+  .about-photo-wrap { width: 200px; height: 200px; }
+}
