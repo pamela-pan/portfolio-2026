@@ -46,7 +46,7 @@ export default function AboutPage() {
           {/* Contact */}
           <div style={{ marginBottom: 48, display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
             <a
-              href="/pdfs/Pamela_Pan_Resume_072026.pdf"
+              href="/pdfs/Pamela_Pan_Resume_082026.pdf"
               target="_blank"
               rel="noopener"
               style={{
