@@ -59,102 +59,150 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  {
-    slug: "dorea",
-    title: "Dorea",
-    subtitle: "From one exhausting day a week to real-time signal",
-    tags: ["Pet Care", "AI", "Community Intelligence Tool"],
-    year: "2026",
-    cover: "/images/projects/dorea/cover.png",
-    coverAlt: "Raw MoeGo Facebook group feed before Dorea",
-    featured: true,
-    summary:
-      "Built at MoeGo to turn scattered Facebook group chatter into structured, actionable intelligence — first version shipped in one week.",
-    sections: [
-      {
-        title: "Impact",
-        stats: [
-          {
-            value: "116 / week",
-            label:
-              "threads processed, up from 10–20 manually — roughly 6–8x the coverage, without adding headcount",
-          },
-          {
-            value: "$20K+ ARR",
-            label:
-              "surfaced directly from competitive intel caught in threads that would've gone unnoticed",
-          },
-          {
-            value: "Same-day",
-            label:
-              "risk detection, up from once-a-week manual scanning — reactive to continuous",
-          },
-        ],
-      },
-      {
-        title: "The problem",
-        body: [
-          "Every week, our community manager spent a full day just reading — scrolling through MoeGo's Facebook groups, hunting for negative comments before they became escalations, looping in support when something needed a human. Competitive intel and feature requests were buried in the same threads: easy to miss, impossible to track.",
-          "And that was just the groups we owned. External groomer communities, where a lot of the real signal lives, were invisible to us entirely — no access, no visibility.",
-          "The real cost wasn't the day itself. It was the lag. By the time something surfaced, it had usually been sitting for hours, sometimes days.",
-        ],
-        image: {
-          src: "/images/projects/dorea/before.gif",
-          alt: "Raw MoeGo Facebook group feed before Dorea",
-          caption: "Before — raw, unfiltered community feed",
+{
+  slug: "gtm-intelligence",
+
+  title: "GTM Intelligence System",
+
+  subtitle:
+    "Turning scattered customer and market signals into something sales and marketing can actually use.",
+
+  tags: ["Pet Care", "AI", "Growth Engineering"],
+
+  year: "2026",
+
+  cover: "/images/projects/dorea/cover2.png",
+
+  coverAlt: "Architecture of MoeGo's GTM intelligence system",
+
+  featured: true,
+
+  summary:
+    "Built at MoeGo around a simple idea: the same signals can help teams react in real time and build a better understanding of who they're selling to over time.",
+
+  sections: [
+    {
+      title: "Impact",
+
+      stats: [
+        {
+          value: "116 / week",
+          label:
+            "relevant community threads processed, up from 10–20 manually",
         },
-      },
-      {
-        title: "Getting to yes",
-        body: [
-          "I scoped this with our community manager first: what needed catching, what \"good\" looked like, what to build first. Then I cleared the tooling dependencies to get the green light. From there, I built it mostly solo — architecture, MVP, iteration — using Claude Code and Vercel.",
-          "First version: one week. Everything after that got shaped by real usage.",
-        ],
-      },
-      {
-        title: "See everything, structured",
-        body: [
-          "Every post and comment across monitored groups lands in one place — tagged by member, scored by sentiment. No more hunting across separate feeds. One glance shows who's at risk, who's happy, and what's trending.",
-        ],
-        image: {
-          src: "/images/projects/dorea/after-members.gif",
-          alt: "Members categorized and scored by sentiment",
-          caption: "After — members, categorized and scored",
+        {
+          value: "$20K+",
+          label:
+            "in competitive revenue opportunities surfaced",
         },
-      },
-      {
-        title: "Where AI reads for you",
-        body: [
-          "Claude classifies every post automatically: churn risk, competitor mention, feature request, plain sentiment — each with a recommended action attached. What used to take a full day now runs continuously, in the background.",
-          "This is workflow automation, not autonomous response — on purpose. The groomer community values authenticity, so a person stays in the loop for anything customer-facing. The AI's job is to surface signal, not replace the relationship.",
-        ],
-        image: {
-          src: "/images/projects/dorea/after-intelligence.gif",
-          alt: "AI-classified intelligence feed with recommended actions",
-          caption: "After — AI-classified intelligence feed",
+        {
+          value: "8 active deals",
+          label:
+            "using the ICP Hub across $30K+ in pipeline",
         },
-        callout:
-          "Classification runs on `claude-sonnet-4-20250514`, configurable via `CLAUDE_MODEL` env var, with both auto-classify and manual trigger modes.",
-      },
-      {
-        title: "From noise to a daily brief",
-        body: [
-          "Instead of raw threads, stakeholders get one synthesized brief — bottom line up front, sourced evidence linked below. This is what actually gets read and shared.",
-        ],
-        image: {
-          src: "/images/projects/dorea/after-briefings.gif",
-          alt: "Synthesized daily brief",
-          caption: "After — synthesized daily brief",
+        {
+          value: "3 conversions",
+          label:
+            "from an initial ~$500 ICP-specific paid test",
         },
+      ],
+    },
+
+    {
+      title: "The problem",
+
+      body: [
+        "We had a lot of customer knowledge, but no single place where it added up.",
+
+        "Useful signals lived across Salesforce, sales feedback, product knowledge, customer stories, competitive research, and conversations across 10+ pet-care communities. Sales, product, and marketing were often piecing together the same answers in parallel.",
+
+        "The question became less 'how do we collect more information?' and more 'how do we make what we already know easier to act on?'",
+      ],
+    },
+
+    {
+      title: "Part 1 — Market Pulse: what changed?",
+
+      body: [
+        "The first problem was speed. Our community manager was spending a full day each week manually scanning conversations, and important competitor or customer signals were still easy to miss.",
+
+        "I built Market Pulse to continuously surface the threads worth paying attention to. AI handles the reading, classification, and prioritization; people still decide what deserves a response, escalation, or follow-up.",
+      ],
+
+      image: {
+        src: "/images/projects/dorea/after-intelligence.gif",
+        alt: "Market Pulse showing prioritized market intelligence",
+        caption: "From raw chatter to prioritized signal",
       },
-      {
-        title: "What's next",
-        body: [
-          "We're experimenting with a step beyond monitoring: a quick-response agent that could reply autonomously in the community. But we're moving carefully — authenticity matters more than speed here, so a human stays in the loop for now. Dorea's role today is the signal layer: catching what matters, structuring it, routing it to the right person, internally and externally.",
-        ],
+    },
+
+    {
+      title: "Scanning -> signal",
+
+      body: [
+        "That changed the workflow from checking a small sample once a week to seeing relevant signals as they emerged.",
+
+        "Coverage grew from roughly 10–20 manually reviewed threads to 116 relevant threads a week, while competitive opportunities and customer risk became visible much earlier.",
+      ],
+
+      image: {
+        src: "/images/projects/dorea/after-briefings.gif",
+        alt: "Market Pulse intelligence brief",
+        caption: "A brief people can actually act on",
       },
-    ],
-  },
+    },
+
+    {
+      title: "Part 2 — ICP Hub: what have we learned?",
+
+      body: [
+        "Real-time signal was only half the problem. Sales, product, and marketing also needed a shared picture of each ICP that could get better as new evidence came in.",
+
+        "I worked with engineering to understand the existing stack and where intelligence would actually be useful. The answer wasn't another interface for people to manage.",
+
+        "So I designed the ICP Hub as a shared intelligence layer, structured around the things that actually change a GTM decision: trigger moments, pain points, desired outcomes, product levers, proof, and competitive context.",
+      ],
+
+      image: {
+        src: "/images/projects/dorea/icp-profile-structure.png",
+        alt: "ICP profile data structure",
+        caption: "The shared structure behind each ICP",
+      },
+    },
+
+    {
+      title: "Build intelligence, not another workflow",
+
+      body: [
+        "My first instinct was to build downstream tools too: battlecards, landing pages, enablement assets, and sales workflows.",
+
+        "But working with sales and engineering made the constraint clear. Each team already had its own context, systems, and way of working. They didn't need marketing to give them another place to do their job.",
+
+        "That led to the core design choice: keep the intelligence shared, then let teams combine it with their own context and AI skills.",
+
+        "Intelligence layer + skill → GTM action."
+      ],
+    },
+
+    {
+      title: "Driving action",
+
+      body: [
+        "The architecture only mattered if the intelligence actually traveled downstream into real work.",
+
+        "Sales is using the ICP Hub across eight active opportunities representing more than $30K in pipeline. I also used the same ICP context to shape segment-specific landing pages and messaging for a small Google Ads test, which generated three conversions from roughly $500 in initial spend.",
+
+        "That was the useful proof for me: the value wasn't another AI interface. It was making good context easier to reuse, so different teams could move faster in the workflows they already understood best.",
+      ],
+
+      image: {
+        src: "/images/projects/dorea/landing-page.png",
+        alt: "ICP-specific landing page",
+        caption: "One downstream use case: ICP context → acquisition",
+      },
+    },
+  ],
+},
     {
     slug: "trivo",
     title: "Trivo",

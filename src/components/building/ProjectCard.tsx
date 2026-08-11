@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import type { Project } from "@/lib/content";
+import ImageLightbox from "@/components/shared/ImageLightbox";
 
 interface ProjectCardProps {
   project: Project;
@@ -14,6 +15,7 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, index = 1, total = 1 }: ProjectCardProps) {
   const [hovered, setHovered] = useState(false);
   const [isTouch, setIsTouch] = useState(false);
+  const [zoomOpen, setZoomOpen] = useState(false);
 
   useEffect(() => {
     setIsTouch(window.matchMedia("(hover: none)").matches);
@@ -23,6 +25,7 @@ export default function ProjectCard({ project, index = 1, total = 1 }: ProjectCa
   const revealed = hovered || isTouch;
 
   return (
+    <>
     <Link
       href={`/building/${project.slug}`}
       style={{ textDecoration: "none", color: "inherit" }}
@@ -124,6 +127,38 @@ export default function ProjectCard({ project, index = 1, total = 1 }: ProjectCa
               pointerEvents: "none",
             }}
           />
+
+          {/* Zoom trigger */}
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setZoomOpen(true);
+            }}
+            aria-label="Zoom image"
+            style={{
+              all: "unset",
+              position: "absolute",
+              top: 14,
+              right: 14,
+              zIndex: 3,
+              width: 30,
+              height: 30,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: "50%",
+              background: "rgba(28,26,23,0.55)",
+              opacity: revealed ? 1 : 0,
+              transition: "opacity 0.3s ease",
+              cursor: "zoom-in",
+              pointerEvents: revealed ? "auto" : "none",
+            }}
+          >
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--bg)" strokeWidth="2" strokeLinecap="round">
+              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+            </svg>
+          </button>
         </div>
 
         {/* Project info — slides up */}
@@ -163,5 +198,12 @@ export default function ProjectCard({ project, index = 1, total = 1 }: ProjectCa
         </div>
       </div>
     </Link>
+    <ImageLightbox
+      src={project.cover}
+      alt={project.coverAlt}
+      open={zoomOpen}
+      onClose={() => setZoomOpen(false)}
+    />
+    </>
   );
 }

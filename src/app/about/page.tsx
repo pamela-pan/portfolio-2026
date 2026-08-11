@@ -33,7 +33,7 @@ export default function AboutPage() {
               fontWeight: 400,
               letterSpacing: "-0.02em",
               lineHeight: 1.05,
-              marginBottom: 48,
+              marginBottom: 32,
             }}
           >
             {person.nameFull}
@@ -43,45 +43,8 @@ export default function AboutPage() {
             </span> */}
           </h1>
 
-          {/* Bio paragraphs — update freely */}
-          {[
-            "I grew up in southern China and have since also called New York and Los Angeles home. Living in different places has taught me that the most interesting work often happens in between—between cultures, disciplines, and increasingly, between AI systems and the humans using them.",
-            "Currently at Cloudera, I lead go-to-market initiatives for enterprise AI and data platform products—from shaping product narratives and launching technical collateral to enabling global sales teams and speaking at conferences. I enjoy translating complex technologies into experiences that people can understand, trust, and use.",
-            "Outside of work, I'm a three-time hackathon winner and currently serve on the Cornell Tech Alumni Council, helping grow and support a community of more than 1,500 alumni."
-          ].map((para, i) => (
-            <p
-              key={i}
-              className="about-bio"
-              style={{
-                fontFamily: "var(--serif)",
-                fontSize: 17,
-                lineHeight: 1.85,
-                marginBottom: 28,
-                color: i === 0 ? "var(--ink)" : "var(--ink-muted)",
-              }}
-            >
-              {para}
-            </p>
-          ))}
-
           {/* Contact */}
-          <div style={{ marginTop: 64, display: "flex", gap: 24, flexWrap: "wrap" }}>
-            <a
-              href={`mailto:${person.email}`}
-              style={{
-                fontFamily: "var(--mono)",
-                fontSize: 11,
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                color: "var(--ink)",
-                border: "0.5px solid var(--border)",
-                borderRadius: 100,
-                padding: "10px 22px",
-                textDecoration: "none",
-              }}
-            >
-              Email
-            </a>
+          <div style={{ marginBottom: 48, display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
             <a
               href="/pdfs/Pamela_Pan_Resume_072026.pdf"
               target="_blank"
@@ -99,6 +62,22 @@ export default function AboutPage() {
               }}
             >
               Resume
+            </a>
+            <a
+              href={`mailto:${person.email}`}
+              style={{
+                fontFamily: "var(--mono)",
+                fontSize: 11,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: "var(--ink)",
+                border: "0.5px solid var(--border)",
+                borderRadius: 100,
+                padding: "10px 22px",
+                textDecoration: "none",
+              }}
+            >
+              Email
             </a>
             <a
               href={person.linkedin}
@@ -131,6 +110,28 @@ export default function AboutPage() {
               GitHub →
             </a>
           </div>
+
+          {/* Bio paragraphs — update freely */}
+          {[
+            "I grew up in southern China and have since called New York and Los Angeles home. Living across different places has made me interested in work that sits between worlds—between technical systems and human judgment, product and go-to-market, and increasingly, between what AI can do and how people actually use it.",
+            "At Cloudera, I work on go-to-market for enterprise AI and data products, shaping how complex technologies are understood and adopted across customers, sales teams, and the broader market. Alongside that, I've been building more hands-on AI-native GTM systems—from market intelligence and ICP infrastructure to experiments that connect customer signals directly to sales and growth actions.",
+            "I'm most energized by work where I can understand the system, build the missing layer, and make it easier for people to act on better context.",
+            "Outside of work, you'll usually find me training for HYROX, practicing martial arts, or halfway up a bouldering wall."
+          ].map((para, i) => (
+            <p
+              key={i}
+              className="about-bio"
+              style={{
+                fontFamily: "var(--serif)",
+                fontSize: 17,
+                lineHeight: 1.85,
+                marginBottom: 28,
+                color: i === 0 ? "var(--ink)" : "var(--ink-muted)",
+              }}
+            >
+              {para}
+            </p>
+          ))}
         </div>
 
         {/* Right — portrait */}

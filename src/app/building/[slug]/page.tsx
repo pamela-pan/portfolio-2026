@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import Nav from "@/components/nav/Nav";
+import ZoomableImage from "@/components/shared/ZoomableImage";
 import { projects } from "@/lib/content";
 
 interface Props {
@@ -178,13 +178,10 @@ export default function ProjectPage({ params }: Props) {
               border: "0.5px solid var(--border)",
             }}
           >
-            <Image
+            <ZoomableImage
               src={project.cover}
               alt={project.coverAlt}
-              width={1600}
-              height={1000}
               style={{ width: "100%", height: "auto", display: "block" }}
-              priority
             />
           </div>
         ))}
@@ -248,8 +245,7 @@ export default function ProjectPage({ params }: Props) {
                     border: "0.5px solid var(--border)",
                   }}
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <ZoomableImage
                     src={section.image.src}
                     alt={section.image.alt}
                     style={{ width: "100%", height: "auto", display: "block" }}
