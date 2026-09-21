@@ -101,7 +101,7 @@ export const projects: Project[] = [
       },
   
       {
-        title: "1 — From dormant MQLs to pipeline",
+        title: "Workflow 1 — Dormant MQLs -> Outbound pipeline",
   
         body: [
           "More than 10,000 marketing-qualified leads were sitting dormant in HubSpot. I built separate campaigns for grooming businesses and growing boarding and daycare operators.",
@@ -143,7 +143,7 @@ export const projects: Project[] = [
       },
   
       {
-        title: "2 — From ICP messaging to paid demand capture",
+        title: "Workflow 2 — ICP messaging -> Paid demand capture",
   
         body: [
           "We reused the same ICP-specific landing pages in Google Search campaigns to test whether the messaging could also convert active demand.",
@@ -174,7 +174,7 @@ export const projects: Project[] = [
       },
   
       {
-        title: "3 — From community conversations to market intelligence",
+        title: "Workflow 3 — Community signals -> Opportunities & Execution recommendations",
   
         body: [
           "Our community manager was spending a full day each week manually scanning conversations, while important customer and competitor signals were still easy to miss.",
@@ -228,7 +228,7 @@ export const projects: Project[] = [
         body: [
           "AI increased the volume of evidence I could evaluate and accelerated research, segmentation, synthesis, and first drafts.",
   
-          "I retained control over targeting, positioning, claims, investment decisions, and what ultimately reached customers.",
+          "The team and I retained control over targeting, positioning, claims, investment decisions, and what ultimately reached customers.",
         ],
       },
     ],
