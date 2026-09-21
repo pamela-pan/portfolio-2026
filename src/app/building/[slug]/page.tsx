@@ -189,16 +189,19 @@ export default function ProjectPage({ params }: Props) {
         {/* Summary */}
         {!project.hideCoverAndSummary && (
           <>
-            <p
-              style={{
-                fontFamily: "var(--serif)",
-                fontSize: "clamp(18px, 2vw, 22px)",
-                lineHeight: 1.7,
-                marginBottom: 80,
-              }}
-            >
-              {project.summary}
-            </p>
+            {project.summary.split(/\n\n+/).map((paragraph, i, arr) => (
+              <p
+                key={i}
+                style={{
+                  fontFamily: "var(--serif)",
+                  fontSize: "clamp(18px, 2vw, 22px)",
+                  lineHeight: 1.7,
+                  marginBottom: i === arr.length - 1 ? 80 : 24,
+                }}
+              >
+                {paragraph}
+              </p>
+            ))}
 
             <hr style={{ border: "none", borderTop: "0.5px solid var(--border)", marginBottom: 80 }} />
           </>

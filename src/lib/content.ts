@@ -78,7 +78,7 @@ export const projects: Project[] = [
     featured: true,
   
     summary:
-      "I built a shared system for turning customer and market signals into repeatable GTM execution across outbound, paid acquisition, and market intelligence.",
+      "As MoeGo expanded from SMB grooming businesses into larger boarding and daycare operators, one-size-fits-all messaging no longer reflected how different customers made decisions. At the same time, valuable customer knowledge was scattered across HubSpot, Sales feedback, product expertise, competitive research, and more than 10 industry communities.\n\nI built a shared system for turning customer and market signals into repeatable GTM execution across outbound, paid acquisition, and market intelligence.",
   
     sections: [
       {
