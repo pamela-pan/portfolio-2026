@@ -59,150 +59,181 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-{
-  slug: "gtm-intelligence",
-
-  title: "GTM Intelligence System",
-
-  subtitle:
-    "Turning scattered customer and market signals into something sales and marketing can actually use.",
-
-  tags: ["Pet Care", "AI", "Growth Engineering"],
-
-  year: "2026",
-
-  cover: "/images/projects/dorea/cover2.png",
-
-  coverAlt: "Architecture of MoeGo's GTM intelligence system",
-
-  featured: true,
-
-  summary:
-    "Built at MoeGo around a simple idea: the same signals can help teams react in real time and build a better understanding of who they're selling to over time.",
-
-  sections: [
-    {
-      title: "Impact",
-
-      stats: [
-        {
-          value: "116 / week",
-          label:
-            "relevant community threads processed, up from 10–20 manually",
+  {
+    slug: "gtm-operating-system",
+  
+    title: "GTM Operating System",
+  
+    subtitle:
+      "One intelligence layer powering multiple growth workflows.",
+  
+    tags: ["B2B SaaS", "AI", "Growth Engineering"],
+  
+    year: "2026",
+  
+    cover: "/images/projects/gtm-os/cover.png",
+  
+    coverAlt: "MoeGo GTM operating system",
+  
+    featured: true,
+  
+    summary:
+      "I built a shared system for turning customer and market signals into repeatable GTM execution across outbound, paid acquisition, and market intelligence.",
+  
+    sections: [
+      {
+        title: "From intelligence to action",
+  
+        body: [
+          "Customer knowledge was scattered across HubSpot, sales feedback, product expertise, competitive research, and more than 10 industry communities.",
+  
+          "I connected those signals to a shared ICP intelligence layer, then built repeatable workflows for activating that context across growth and sales.",
+  
+          "AI Skills applied consistent decision logic. n8n managed triggers and handoffs. Human review controlled the audience, positioning, claims, and final action.",
+        ],
+  
+        image: {
+          src: "/images/projects/gtm-os/flow.png",
+          alt: "Customer signals flowing through ICP intelligence into GTM workflows",
+          caption:
+            "Signals → ICP intelligence → human decision → activation",
         },
-        {
-          value: "$20K+",
-          label:
-            "in competitive revenue opportunities surfaced",
+      },
+  
+      {
+        title: "1 — From dormant MQLs to pipeline",
+  
+        body: [
+          "More than 10,000 marketing-qualified leads were sitting dormant in HubSpot. I built separate campaigns for grooming businesses and growing boarding and daycare operators.",
+  
+          "We segmented the database by business type, location count, team size, and growth stage, then tested three messaging directions for each ICP across a three-week email sequence.",
+  
+          "I owned the HubSpot segmentation, corrected mislabeled tags, refined the lists, selected the final messaging, reviewed the copy and claims, coordinated visuals, and executed the campaigns.",
+  
+          "The conversion path connected each email to an ICP-specific booking page, followed by a completed demo, sales follow-up, and paid conversion.",
+        ],
+  
+        stats: [
+          {
+            value: "48%",
+            label:
+              "average open rate, compared with roughly 20% for similar campaigns",
+          },
+          {
+            value: "~50",
+            label: "completed demos generated over two months",
+          },
+          {
+            value: "8",
+            label: "paid customers converted",
+          },
+          {
+            value: "2 days",
+            label:
+              "to launch campaigns that previously took roughly two weeks",
+          },
+        ],
+  
+        image: {
+          src: "/images/projects/dorea/landing-page.png",
+          alt: "ICP-specific demo-booking page",
+          caption:
+            "The same ICP insight carried from the email into the booking experience",
         },
-        {
-          value: "8 active deals",
-          label:
-            "using the ICP Hub across $30K+ in pipeline",
+      },
+  
+      {
+        title: "2 — From ICP messaging to paid demand capture",
+  
+        body: [
+          "We reused the same ICP-specific landing pages in Google Search campaigns to test whether the messaging could also convert active demand.",
+  
+          "The campaign generated 19 demo bookings from approximately $1,147 in spend, at an average cost of roughly $60 per booking.",
+  
+          "Search-term analysis showed that most conversions came from branded demand. The test validated the pages as a demand-capture asset, while showing that future experiments needed to separate branded and nonbranded acquisition performance.",
+        ],
+  
+        stats: [
+          {
+            value: "19",
+            label: "demo bookings",
+          },
+          {
+            value: "$60",
+            label: "average cost per booking",
+          },
+          {
+            value: "8.7%",
+            label: "click-through rate",
+          },
+          {
+            value: "$1.34",
+            label: "average cost per click",
+          },
+        ],
+      },
+  
+      {
+        title: "3 — From community conversations to market intelligence",
+  
+        body: [
+          "Our community manager was spending a full day each week manually scanning conversations, while important customer and competitor signals were still easy to miss.",
+  
+          "I built Market Pulse to continuously review industry communities and prioritize the conversations most relevant to customer risk, competitive activity, and buying intent.",
+  
+          "AI handled the initial reading, classification, and prioritization. Human review determined which signals required a response, escalation, sales follow-up, or update to the ICP knowledge base.",
+        ],
+  
+        stats: [
+          {
+            value: "100+ / week",
+            label: "relevant community threads surfaced",
+          },
+          {
+            value: "10–20",
+            label: "threads previously reviewed manually",
+          },
+          {
+            value: "Same day",
+            label: "detection of customer and competitive signals",
+          },
+          {
+            value: "$20K+",
+            label: "in competitive revenue opportunities surfaced",
+          },
+        ],
+  
+        image: {
+          src: "/images/projects/dorea/after-intelligence.gif",
+          alt: "Market Pulse prioritizing community intelligence",
+          caption: "From raw community conversations to prioritized signals",
         },
-        {
-          value: "3 conversions",
-          label:
-            "from an initial ~$500 ICP-specific paid test",
-        },
-      ],
-    },
-
-    {
-      title: "The problem",
-
-      body: [
-        "We had a lot of customer knowledge, but no single place where it added up.",
-
-        "Useful signals lived across Salesforce, sales feedback, product knowledge, customer stories, competitive research, and conversations across 10+ pet-care communities. Sales, product, and marketing were often piecing together the same answers in parallel.",
-
-        "The question became less 'how do we collect more information?' and more 'how do we make what we already know easier to act on?'",
-      ],
-    },
-
-    {
-      title: "Part 1 — Market Pulse: what changed?",
-
-      body: [
-        "The first problem was speed. Our community manager was spending a full day each week manually scanning conversations, and important competitor or customer signals were still easy to miss.",
-
-        "I built Market Pulse to continuously surface the threads worth paying attention to. AI handles the reading, classification, and prioritization; people still decide what deserves a response, escalation, or follow-up.",
-      ],
-
-      image: {
-        src: "/images/projects/dorea/after-intelligence.gif",
-        alt: "Market Pulse showing prioritized market intelligence",
-        caption: "From raw chatter to prioritized signal",
       },
-    },
-
-    {
-      title: "Scanning -> signal",
-
-      body: [
-        "That changed the workflow from checking a small sample once a week to seeing relevant signals as they emerged.",
-
-        "Coverage grew from roughly 10–20 manually reviewed threads to 116 relevant threads a week, while competitive opportunities and customer risk became visible much earlier.",
-      ],
-
-      image: {
-        src: "/images/projects/dorea/after-briefings.gif",
-        alt: "Market Pulse intelligence brief",
-        caption: "A brief people can actually act on",
+  
+      {
+        title: "One system that gets smarter with use",
+  
+        body: [
+          "These were not three disconnected AI projects. Each workflow used the same ICP intelligence and generated new evidence for the others.",
+  
+          "Market signals improved our understanding of each ICP. That context informed campaign messaging and landing pages. Performance data then showed which pains and buying signals deserved more weight.",
+  
+          "One example was staff management: it performed across both grooming and boarding campaigns, revealing that operational complexity was a stronger buying signal than vertical alone.",
+        ],
       },
-    },
-
-    {
-      title: "Part 2 — ICP Hub: what have we learned?",
-
-      body: [
-        "Real-time signal was only half the problem. Sales, product, and marketing also needed a shared picture of each ICP that could get better as new evidence came in.",
-
-        "I worked with engineering to understand the existing stack and where intelligence would actually be useful. The answer wasn't another interface for people to manage.",
-
-        "So I designed the ICP Hub as a shared intelligence layer, structured around the things that actually change a GTM decision: trigger moments, pain points, desired outcomes, product levers, proof, and competitive context.",
-      ],
-
-      image: {
-        src: "/images/projects/dorea/icp-profile-structure.png",
-        alt: "ICP profile data structure",
-        caption: "The shared structure behind each ICP",
+  
+      {
+        title: "AI prepares the decision. People own it.",
+  
+        body: [
+          "AI increased the volume of evidence I could evaluate and accelerated research, segmentation, synthesis, and first drafts.",
+  
+          "I retained control over targeting, positioning, claims, investment decisions, and what ultimately reached customers.",
+        ],
       },
-    },
+    ],
+  },
 
-    {
-      title: "Build intelligence, not another workflow",
-
-      body: [
-        "My first instinct was to build downstream tools too: battlecards, landing pages, enablement assets, and sales workflows.",
-
-        "But working with sales and engineering made the constraint clear. Each team already had its own context, systems, and way of working. They didn't need marketing to give them another place to do their job.",
-
-        "That led to the core design choice: keep the intelligence shared, then let teams combine it with their own context and AI skills.",
-
-        "Intelligence layer + skill → GTM action."
-      ],
-    },
-
-    {
-      title: "Driving action",
-
-      body: [
-        "The architecture only mattered if the intelligence actually traveled downstream into real work.",
-
-        "Sales is using the ICP Hub across eight active opportunities representing more than $30K in pipeline. I also used the same ICP context to shape segment-specific landing pages and messaging for a small Google Ads test, which generated three conversions from roughly $500 in initial spend.",
-
-        "That was the useful proof for me: the value wasn't another AI interface. It was making good context easier to reuse, so different teams could move faster in the workflows they already understood best.",
-      ],
-
-      image: {
-        src: "/images/projects/dorea/landing-page.png",
-        alt: "ICP-specific landing page",
-        caption: "One downstream use case: ICP context → acquisition",
-      },
-    },
-  ],
-},
     {
     slug: "trivo",
     title: "Trivo",
