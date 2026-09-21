@@ -179,7 +179,7 @@ export const projects: Project[] = [
         body: [
           "Our community manager was spending a full day each week manually scanning conversations, while important customer and competitor signals were still easy to miss.",
   
-          "I built Market Pulse to continuously review industry communities and prioritize the conversations most relevant to customer risk, competitive activity, and buying intent.",
+          "I built a tool called Dorea to monitor the market pulse, continuously review community threads, and prioritize the conversations most relevant to customer risk, competitive activity, and buying intent.",
   
           "AI handled the initial reading, classification, and prioritization. Human review determined which signals required a response, escalation, sales follow-up, or update to the ICP knowledge base.",
         ],
